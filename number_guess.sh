@@ -38,7 +38,7 @@ if [[ -z $old_user ]]
 then
 update=$($PSQL "update users set games_played = 1,best_game=$guess where username='$username'")
 else
-update=$($PSQL "update users set games_played = games+played + 1 where username='$username'")
+update=$($PSQL "update users set games_played = games_played + 1 where username='$username'")
 if [[ $guess -lt $best_game || -z $best_game ]]
 then
 update=$($PSQL "update users set best_game = $guess where username='$username'")
